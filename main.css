@@ -1,0 +1,136 @@
+body{
+  padding: 0px;
+  margin: 0px;
+  overscroll-behavior-y: contain;
+}
+.container{
+  width: 100%;
+  height: 100vh;
+  cursor: none;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background-image: url(back.jpg);
+  background-position: bottom;
+  position: relative;
+}
+.box{
+  position: absolute;
+  width: 125px;
+  height: 125px;
+  background: #820c0c;
+  left: 270px;
+  bottom: 150px;
+  cursor: pointer;
+  border-radius: 100px;
+}
+.school{
+  width: 230px;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
+}
+.sanit-cursor{
+  width: 150px;
+  position: absolute;
+  z-index: 100;
+  pointer-events: none;
+}
+.sanit-cursor canvas{
+  width: 100%;
+  /*transform:rotateY(180deg);*/
+}
+.v-box{
+  
+}
+.v-box .virus{
+  position: absolute;
+  bottom: 34%;
+  left: -138px;
+  -webkit-animation: rotation 2s infinite linear;
+  animation: rotation 2s infinite linear;
+}
+.v-box .virus.rtl-dir{
+  -webkit-animation: rtl-rotation 2s infinite linear;
+  animation: rtl-rotation 2s infinite linear;
+}
+.v-box .virus img{
+  width: 60px;
+  padding: 0px;
+}
+.score-box{
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+.score-box .heart-box{
+  color: #ef0808;
+  display: inline-block;
+  margin-left: 10px;
+}
+.score-box .heart-box svg{
+  width: 35px;
+  height: 35px;
+}
+.score-box .heart-box .full{
+
+}
+.score-box .heart-box .none{
+  display: none;
+}
+.score-box .heart-box.active{
+
+}
+.score-box .heart-box.active .full{
+  display: none;
+}
+.score-box .heart-box.active .none{
+  display: block;
+}
+@keyframes rotation {
+  from {
+      -webkit-transform: rotate(0deg);
+  }
+  to {
+      -webkit-transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes rotation {
+  from {
+      -webkit-transform: rotate(0deg);
+  }
+  to {
+      -webkit-transform: rotate(359deg);
+  }
+}
+@keyframes rtl-rotation {
+  from {
+      -webkit-transform: rotate(0deg);
+  }
+  to {
+      -webkit-transform: rotate(-359deg);
+  }
+}
+@-webkit-keyframes rtl-rotation {
+  from {
+      -webkit-transform: rotate(0deg);
+  }
+  to {
+      -webkit-transform: rotate(-359deg);
+  }
+}
+
+@media (min-width:1200px) and (max-width:1400px){
+  .school{
+    top:-161px;
+  }
+  .v-box .virus{
+    bottom: 42%;
+  }
+  .v-box .virus img{
+    width: 80px;
+  }
+}
