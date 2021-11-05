@@ -111,13 +111,19 @@ class createViruses {
 
         scoreHealth = scoreHealth + 1;
 
-        
 
-        if (scoreHealth === 3){
+
+        if (scoreHealth === 3) {
           clearInterval(startGame);
+
+          document.querySelector('.start-screen').classList.remove('hide');
           // Remove all viruses
           const removeElements = (elms) => elms.forEach(el => el.remove());
-          removeElements( document.querySelectorAll(".virus") );
+          removeElements(document.querySelectorAll(".virus"));
+
+          document.querySelectorAll('.heart-box').forEach(el => el.classList.remove('active'));
+
+          scoreHealth = 0;
         }
       } else {
       }
@@ -146,4 +152,7 @@ function startthegame() {
     createViruses[virusId] = new createViruses();
   }, 1000);
 }
-startthegame();
+const start = () => {
+  startthegame();
+  document.querySelector('.start-screen').classList.add('hide');
+};
